@@ -1,7 +1,14 @@
+import java.awt.Point;
+
 public abstract class Piece{
 	
 	private Point location;
 	private String color;
+
+	public Piece(String color, int x, int y){
+		this.location = new Point(x,y);
+		this.color = color;
+	}
 
 	/**
 	 * move
