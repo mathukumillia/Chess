@@ -6,6 +6,9 @@ public abstract class Piece{
 	private String color;
 
 	public Piece(String color, int x, int y){
+		if(!(color.equals("white") || color.equals("black"))){
+			color = "white";
+		}
 		this.location = new Point(x,y);
 		this.color = color;
 	}
@@ -23,6 +26,14 @@ public abstract class Piece{
 	 */
 	public Point getLoc(){
 		return location;
+	}
+
+	public int getX(){
+		return (int)(location.getX());
+	}
+
+	public int getY(){
+		return (int)(location.getY());
 	}
 
 	public void setColor(String c){
