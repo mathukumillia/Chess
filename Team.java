@@ -1,6 +1,7 @@
 public class Team {
 	
-	private Piece[] pieceLocations = new Piece[16];
+	private Piece[] pieces = new Piece[16];
+	private String color;
 
 	public Team(String color) {
 		setColor(color);
@@ -20,8 +21,17 @@ public class Team {
 		this.color = color;
 	}
 
+	public void initPieces(){
+		if(color.equals("white")){
+			white();
+		}else{
+			black();
+		}
+	}
 
-
+	private void white(){
+		
+	}
 
 
 }
