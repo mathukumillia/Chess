@@ -13,14 +13,15 @@ public class Rook extends Piece{
 
 	/**
 	 * makeMove
-	 * 		makes sure move is legal
+	 * 		makes sure move is legal and moves rook
 	 * 		
-	 * @param x [x coordinate of target position]
-	 * @param y [y coordinate of target position]
+	 * @param p - point you want to move rook to
 	 */
-	public void makeMove(int x, int y){
+	public void makeMove(Point p){
+		int x = (int)(p.getX()); 
+		int y = (int)(p.getY());
 		if(x == getX() || y == getY()){
-			move(x,y);
+			move(p);
 		}else{
 			return;
 		}

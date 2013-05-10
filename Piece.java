@@ -16,9 +16,26 @@ public abstract class Piece{
 	/**
 	 * move
 	 * 		moves the piece to the specified location
+	 *
+	 *@param x - x coordinate of target location
+	 *@param y - y coordinate of target location
 	 */
 	public void move(int x, int y){
-		location.setLocation(x,y);
+		move(new Point(x,y));
+	}
+
+	/**
+	 * move
+	 * 		moves the piece to the specified location
+	 *
+	 *@param p - target location in point format
+	 */
+	public void move(Point p){
+		if(! p.equals(location)){
+			location.setLocation(p);
+		}else{
+			return;
+		}
 	}
 
 	/**
