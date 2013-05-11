@@ -1,14 +1,13 @@
 public class Rook extends Piece{
 	
 	/**
-	 * constructor
-	 * @param  color [color of the rook]
-	 * @param  x     [x coordinate of the rook]
-	 * @param  y     [y coordinate of the rook]
+	 * Constructor
+	 *
+	 * @param  p - initial starting position of rook
 	 * 
 	 */
-	public Rook(String color, int x, int y){
-		super(color, x, y);
+	public Rook(Point p){
+		super(p);
 	}
 
 	/**

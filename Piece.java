@@ -3,14 +3,15 @@ import java.awt.Point;
 public abstract class Piece{
 	
 	private Point location;
-	private String color;
 
-	public Piece(String color, int x, int y){
-		if(!(color.equals("white") || color.equals("black"))){
-			color = "white";
-		}
-		this.location = new Point(x,y);
-		this.color = color;
+	/**
+	* Constructor
+	*
+	* @param p - starting point of piece
+	*
+	**/
+	public Piece(Point p){
+		this.location = p;
 	}
 
 	/**
@@ -31,7 +32,7 @@ public abstract class Piece{
 	 *@param p - target location in point format
 	 */
 	public void move(Point p){
-		if(! p.equals(location)){
+		if(! (p.equals(location)){					//checks to make sure location passed in is not current location
 			location.setLocation(p);
 		}else{
 			return;
@@ -52,13 +53,4 @@ public abstract class Piece{
 	public int getY(){
 		return (int)(location.getY());
 	}
-
-	public void setColor(String c){
-		color = c;
-	}
-
-	public String getColor(){
-		return color;
-	}
-
 }

@@ -1,14 +1,13 @@
 public class Pawn extends Piece{
 	
 	/**
-	 * constructor
-	 * @param  color [color of the pawn]
-	 * @param  x     [x coordinate of the pawn]
-	 * @param  y     [y coordinate of the pawn]
+	 * Constructor
+	 *
+	 * @param p - initial starting point of pawn
 	 * 
 	 */
-	public pawn(String color, int x, int y){
-		super(color, x, y);
+	public Pawn(Point p){
+		super(p);
 	}
 
 	/**

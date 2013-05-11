@@ -3,13 +3,11 @@ public class King extends Piece{
 	/**
 	* Constructor
 	* 
-	*@param color - color of king
-	*@param x - x coordinate of king start position
-	*@param y - y coordinate of king start position
+	*@param p - initial starting position of king
 	*
 	**/
-	public King(String color, int x, int y){
-		super(color, x, y);
+	public King(Point p){
+		super(p);
 	}
 
 	/**

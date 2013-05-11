@@ -3,13 +3,11 @@ public class Knight extends Piece {
 	/**
 	* Constructor
 	* 
-	*@param color - color of knight
-	*@param x - x coordinate of knight start position
-	*@param y - y coordinate of knight start position
+	*@param p - initial starting position of Knight
 	*
 	**/
-	public Knight(String color, int x, int y){
-		super(color, x, y);
+	public Knight(Point p){
+		super(p);
 	}
 
 	/**
