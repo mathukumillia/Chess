@@ -1,3 +1,5 @@
+import java.awt.Point;
+
 public class King extends Piece{
 	
 	/**
@@ -6,8 +8,8 @@ public class King extends Piece{
 	*@param p - initial starting position of king
 	*
 	**/
-	public King(Point p){
-		super(p);
+	public King(Point p, boolean isWhite){
+		super(p, isWhite);
 	}
 
 	/**

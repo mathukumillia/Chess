@@ -1,3 +1,5 @@
+import java.awt.Point;
+
 public class Pawn extends Piece{
 	
 	/**
@@ -6,8 +8,8 @@ public class Pawn extends Piece{
 	 * @param p - initial starting point of pawn
 	 * 
 	 */
-	public Pawn(Point p){
-		super(p);
+	public Pawn(Point p, boolean isWhite){
+		super(p, isWhite);
 	}
 
 	/**
@@ -20,7 +22,7 @@ public class Pawn extends Piece{
 		int x = (int)(p.getX()); 
 		int y = (int)(p.getY());
 		if(x == getX()){
-			if(getColor().equals("white")){
+			if(isWhite()){
 				if(y-getY() == 1){
 					move(p);
 				}

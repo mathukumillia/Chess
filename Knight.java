@@ -1,3 +1,5 @@
+import java.awt.Point;
+
 public class Knight extends Piece {
 	
 	/**
@@ -6,8 +8,8 @@ public class Knight extends Piece {
 	*@param p - initial starting position of Knight
 	*
 	**/
-	public Knight(Point p){
-		super(p);
+	public Knight(Point p, boolean isWhite){
+		super(p, isWhite);
 	}
 
 	/**

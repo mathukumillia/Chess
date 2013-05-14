@@ -1,3 +1,5 @@
+import java.awt.Point;
+
 public class Rook extends Piece{
 	
 	/**
@@ -6,8 +8,8 @@ public class Rook extends Piece{
 	 * @param  p - initial starting position of rook
 	 * 
 	 */
-	public Rook(Point p){
-		super(p);
+	public Rook(Point p, boolean isWhite){
+		super(p, isWhite);
 	}
 
 	/**
