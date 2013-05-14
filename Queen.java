@@ -6,8 +6,8 @@ public class Queen extends Piece{
 	*@param p - initial starting point of Queen
 	*
 	**/
-	public Queen(Point p){
-		super(p);
+	public Queen(Point p, boolean isWhite){
+		super(p, isWhite);
 	}
 
 	/**
