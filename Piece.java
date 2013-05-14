@@ -1,16 +1,38 @@
 import java.awt.Point;
+import java.awt.image.BufferedImage;
 
 public abstract class Piece{
 	
 	private Point location;
-	private String color;
 
-	public Piece(String color, int x, int y){
-		if(!(color.equals("white") || color.equals("black"))){
-			color = "white";
-		}
-		this.location = new Point(x,y);
-		this.color = color;
+	private BufferedImage image;
+	private boolean isWhite;
+
+	/**
+	* Constructor
+	*
+	* @param p - starting point of piece
+	*
+	**/
+	public Piece(Point p, boolean isWhite){
+		this.location = p;
+		this.isWhite = isWhite;
+		image = ChessApplet.getImage(this);
+	}
+
+	/**
+	 * draw
+	 * 		paint the piece to the screen, must be called from the paint
+	 * 		method of a Graphic object
+	 * @param g   - the drawing context
+	 * @param dim - dimensions of the containing Square
+	 */
+	public void draw(Graphics g, Dimension dim) {
+		g.drawImage(image, 0, 0, (int)dim.getWidth(), (int)dim.getHeight(), null);
+	}
+
+	public boolean isWhite() {
+		return isWhite;
 	}
 
 	/**
@@ -31,7 +53,7 @@ public abstract class Piece{
 	 *@param p - target location in point format
 	 */
 	public void move(Point p){
-		if(! p.equals(location)){
+		if(! (p.equals(location)){					//checks to make sure location passed in is not current location
 			location.setLocation(p);
 		}else{
 			return;
@@ -52,13 +74,4 @@ public abstract class Piece{
 	public int getY(){
 		return (int)(location.getY());
 	}
-
-	public void setColor(String c){
-		color = c;
-	}
-
-	public String getColor(){
-		return color;
-	}
-
 }

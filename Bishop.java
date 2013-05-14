@@ -1,14 +1,13 @@
 public class Bishop extends Piece {
 	
 	/**
-	 * constructor
-	 * @param  color [color of the bishop]
-	 * @param  x     [x coordinate of the bishop]
-	 * @param  y     [y coordinate of the bishop]
+	 * Constructor
+	 *
+	 * @param p - initial starting point of bishop
 	 * 
 	 */
-	public Bishop(String color, int x, int y){
-		super(color, x, y);
+	public Bishop(Point p){
+		super(p);
 	}
 
 	/**

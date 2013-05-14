@@ -3,13 +3,11 @@ public class Queen extends Piece{
 	/**
 	* Constructor
 	* 
-	*@param color - color of queen
-	*@param x - x coordinate of queen start position
-	*@param y - y coordinate of queen start position
+	*@param p - initial starting point of Queen
 	*
 	**/
-	public Queen(String color, int x, int y){
-		super(color, x, y);
+	public Queen(Point p, boolean isWhite){
+		super(p, isWhite);
 	}
 
 	/**
