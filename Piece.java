@@ -1,8 +1,12 @@
 import java.awt.Point;
+import java.awt.image.BufferedImage;
 
 public abstract class Piece{
 	
 	private Point location;
+
+	private BufferedImage image;
+	private boolean isWhite;
 
 	/**
 	* Constructor
@@ -10,8 +14,25 @@ public abstract class Piece{
 	* @param p - starting point of piece
 	*
 	**/
-	public Piece(Point p){
+	public Piece(Point p, boolean isWhite){
 		this.location = p;
+		this.isWhite = isWhite;
+		image = ChessApplet.getImage(this);
+	}
+
+	/**
+	 * draw
+	 * 		paint the piece to the screen, must be called from the paint
+	 * 		method of a Graphic object
+	 * @param g   - the drawing context
+	 * @param dim - dimensions of the containing Square
+	 */
+	public void draw(Graphics g, Dimension dim) {
+		g.drawImage(image, 0, 0, (int)dim.getWidth(), (int)dim.getHeight(), null);
+	}
+
+	public boolean isWhite() {
+		return isWhite;
 	}
 
 	/**
