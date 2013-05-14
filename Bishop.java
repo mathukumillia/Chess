@@ -1,3 +1,5 @@
+import java.awt.Point;
+
 public class Bishop extends Piece {
 	
 	/**
@@ -6,8 +8,8 @@ public class Bishop extends Piece {
 	 * @param p - initial starting point of bishop
 	 * 
 	 */
-	public Bishop(Point p){
-		super(p);
+	public Bishop(Point p, boolean isWhite){
+		super(p, isWhite);
 	}
 
 	/**

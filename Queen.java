@@ -1,3 +1,5 @@
+import java.awt.Point;
+
 public class Queen extends Piece{
 	
 	/**
@@ -18,7 +20,7 @@ public class Queen extends Piece{
 	 */
 	public void makeMove(Point p){
 		int x = (int)(p.getX()); 
-		int y = (int)(p.getY()); != 0
+		int y = (int)(p.getY());
 		if(Math.abs(x-getX()) <= 1 && Math.abs(y-getY()) <= 1){
 			move(p);
 		}else if(x == getX() || y == getY()){

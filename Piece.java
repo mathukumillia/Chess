@@ -1,5 +1,7 @@
 import java.awt.Point;
 import java.awt.image.BufferedImage;
+import java.awt.*;
+import javax.swing.JPanel;
 
 public abstract class Piece{
 	
@@ -53,7 +55,7 @@ public abstract class Piece{
 	 *@param p - target location in point format
 	 */
 	public void move(Point p){
-		if(! (p.equals(location)){					//checks to make sure location passed in is not current location
+		if(! (p.equals(location))){					//checks to make sure location passed in is not current location
 			location.setLocation(p);
 		}else{
 			return;

@@ -1,3 +1,5 @@
+import java.awt.Point;
+
 public class King extends Piece{
 	
 	/**
@@ -6,8 +8,8 @@ public class King extends Piece{
 	*@param p - initial starting position of king
 	*
 	**/
-	public King(Point p){
-		super(p);
+	public King(Point p, boolean isWhite){
+		super(p, isWhite);
 	}
 
 	/**
@@ -18,7 +20,7 @@ public class King extends Piece{
 	 */
 	public void makeMove(Point p){
 		int x = (int)(p.getX()); 
-		int y = (int)(p.getY()); != 0
+		int y = (int)(p.getY());
 		if(Math.abs(x-getX()) <= 1 && Math.abs(y-getY()) <= 1){
 			move(p);
 		}else{
