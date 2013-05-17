@@ -27,16 +27,22 @@ public class Team {
 		this.color = color;
 	}
 
+	public Piece[] getPieces(){
+		return pieces;
+	}
+
+	/**
+	 * initPieces
+	 * 		sets up all of the pieces
+	 */
 	public void initPieces(){
 		if(color.equals("white")){
 			white();
 		}else{
 			black();
 		}
-		for(Piece p : pieces){
-			p.draw(g, new Dimension(400,500));
-		}
 	}
+
 
 	private void white(){
 		for(int i = 0; i<8; i++){
