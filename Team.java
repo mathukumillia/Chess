@@ -1,9 +1,13 @@
 import java.awt.Point;
+import java.awt.Dimension;
+import java.awt.Graphics;
 
 public class Team {
 	
 	private Piece[] pieces = new Piece[16];
 	private String color;
+
+	private Graphics g;
 
 	public Team(String color) {
 		setColor(color);
@@ -28,6 +32,9 @@ public class Team {
 			white();
 		}else{
 			black();
+		}
+		for(Piece p : pieces){
+			p.draw(g, new Dimension(400,500));
 		}
 	}
 
