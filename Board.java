@@ -8,10 +8,13 @@ public class Board extends JPanel{
 	private Team[] teams;
 	private Piece[] pieces;
 	private PiecePanel[] panels;
+	private int[][] squares;
+	private Boolean color;
 
 	public Board(){
-		super(new GridLayout(8,8));
+		super(new GridLayout(0,8));
 		ga = new Game();
+		squares = new int[8][8];
 		teams = ga.getTeams();
 		this.setVisible(true);
 		for(Team t : teams){
@@ -23,9 +26,27 @@ public class Board extends JPanel{
 			}
 		}
 	}
-
 	public void paint(Graphics g){
 		super.paint(g);
+		//Color c = new Color(100,200,200);
+		for(int i = 0; i<squares.length; i++){
+			if(i%2 == 0){
+				color = true;
+			}else{
+				color = false;
+			}
+			for(int j = 0; j<squares[i].length; j++){
+				if(color){
+					g.setColor(Color.white);
+					g.fillRect(100*i, 100*j, 100, 100);
+					color = false;
+				}else{
+					g.setColor(Color.black);
+					g.fillRect(100*i, 100*j, 100, 100);
+					color = true;
+				}
+			}
+		}
 	}
 
 }
