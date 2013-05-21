@@ -1,9 +1,13 @@
 import java.awt.Point;
+import java.awt.Dimension;
+import java.awt.Graphics;
 
 public class Team {
 	
 	private Piece[] pieces = new Piece[16];
 	private String color;
+
+	private Graphics g;
 
 	public Team(String color) {
 		setColor(color);
@@ -23,6 +27,14 @@ public class Team {
 		this.color = color;
 	}
 
+	public Piece[] getPieces(){
+		return pieces;
+	}
+
+	/**
+	 * initPieces
+	 * 		sets up all of the pieces
+	 */
 	public void initPieces(){
 		if(color.equals("white")){
 			white();
@@ -30,6 +42,7 @@ public class Team {
 			black();
 		}
 	}
+
 
 	private void white(){
 		for(int i = 0; i<8; i++){
