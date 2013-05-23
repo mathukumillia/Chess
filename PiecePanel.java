@@ -12,7 +12,7 @@ public class PiecePanel extends JPanel {
 	}
 
 	public void paint(Graphics g){
-		p.draw(g, new Dimension(50,50));
+		p.draw(g, new Dimension(100,100));
 	}
 
 }
