@@ -5,12 +5,19 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Graphics;
 
-public class Tile extends JPanel {
+public class Tile extends JPanel{
 
 	Piece piece;
 
+	
+	//mouseEntered
+	//mouseExited
+	//mousePressed
+	//mouseReleased
+
 	public Tile(Piece piece) {
 		this.piece = piece;
+		
 	}
 
 	public void paint(Graphics g) {
