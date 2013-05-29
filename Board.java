@@ -14,7 +14,7 @@ public class Board extends JPanel{
 	public Board(){
 		super(new GridLayout(0,8));
 		ga = new Game();
-		squares = new int[8][8];
+		//squares = new int[8][8];
 		teams = ga.getTeams();
 		this.setVisible(true);
 		for(Team t : teams){
@@ -22,7 +22,22 @@ public class Board extends JPanel{
 			panels = new PiecePanel[pieces.length];
 			for(int i = 0; i<pieces.length; i++){
 				panels[i] = new PiecePanel(pieces[i]);
-				this.add(panels[i]);
+				if(i % 2 == 1) {
+					this.add(panels[i], Color.BLUE);
+				}
+				else {
+					this.add(panels[i], Color.RED);
+				}
+				// this.add(panels[i]);
+			}
+			if(t.getColor() == "white") {
+				for(int i = 0; i < 24; i++) {
+					if(i % 2 == 1) {
+						this.add(new PiecePanel(null, Color.BLUE));
+					}else{
+						this.add(new PiecePanel(null, Color.RED));
+					}
+				}
 			}
 		}
 	}
