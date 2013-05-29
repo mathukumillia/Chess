@@ -20,9 +20,10 @@ public class PiecePanel extends JPanel {
 	}
 
 	public void paint(Graphics g){
-		if(p != null) p.draw(g, new Dimension(100,100));
 		g.setColor(c);
 		g.fillRect(0, 0, 100, 100);
+		if(p != null) p.draw(g, new Dimension(100,100));
+		
 	}
 
 }

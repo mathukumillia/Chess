@@ -17,25 +17,51 @@ public class Board extends JPanel{
 		//squares = new int[8][8];
 		teams = ga.getTeams();
 		this.setVisible(true);
+		int count = 0;
 		for(Team t : teams){
 			pieces = t.getPieces();
 			panels = new PiecePanel[pieces.length];
 			for(int i = 0; i<pieces.length; i++){
-				panels[i] = new PiecePanel(pieces[i]);
-				if(i % 2 == 1) {
-					this.add(panels[i], Color.BLUE);
+				count++;
+				if(count <= 8) {
+					if(i % 2 == 0) {
+						panels[i] = new PiecePanel(pieces[i], Color.BLUE);
+					}
+					else {
+						panels[i] = new PiecePanel(pieces[i], Color.RED);
+					}
+				}else{
+					if(i % 2 == 1) {
+						panels[i] = new PiecePanel(pieces[i], Color.BLUE);
+					}
+					else {
+						panels[i] = new PiecePanel(pieces[i], Color.RED);
+					}
 				}
-				else {
-					this.add(panels[i], Color.RED);
+				if(count == 16) {
+					count = 0;
 				}
-				// this.add(panels[i]);
+				this.add(panels[i]);
 			}
 			if(t.getColor() == "white") {
-				for(int i = 0; i < 24; i++) {
-					if(i % 2 == 1) {
-						this.add(new PiecePanel(null, Color.BLUE));
+				count = 0;
+				for(int i = 0; i < 32; i++) {
+					count++;
+					if(count <= 8){
+						if(i % 2 == 0) {
+							this.add(new PiecePanel(null, Color.BLUE));
+						}else{
+							this.add(new PiecePanel(null, Color.RED));
+						}
 					}else{
-						this.add(new PiecePanel(null, Color.RED));
+						if(i % 2 == 1) {
+							this.add(new PiecePanel(null, Color.BLUE));
+						}else{
+							this.add(new PiecePanel(null, Color.RED));
+						}
+					}
+					if(count == 16) {
+						count = 0;
 					}
 				}
 			}
