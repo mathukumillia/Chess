@@ -26,29 +26,30 @@ public class Board extends JPanel{
 			}
 		}
 	}
+
 	public void paint(Graphics g){
 		super.paint(g);
-		Color c = new Color(108,5,5);
-		Color d = new Color(128,128,128);
-		for(int i = 0; i<squares.length; i++){
-			if(i%2 == 0){
-				color = true;
-			}else{
-				color = false;
-			}
-			for(int j = 0; j<squares[i].length; j++){
-				if(color){
-					g.setColor(d);
-					g.fillRect(100*i, 100*j, 100, 100);
-					color = false;
+		// Color c = new Color(108,5,5);
+		// Color d = new Color(128,128,128);
+		// for(int i = 0; i<squares.length; i++){
+		// 	if(i%2 == 0){
+		// 		color = true;
+		// 	}else{
+		// 		color = false;
+		// 	}
+		// 	for(int j = 0; j<squares[i].length; j++){
+		// 		if(color){
+		// 			g.setColor(d);
+		// 			g.fillRect(100*i, 100*j, 100, 100);
+		// 			color = false;
 
-				}else{
-					g.setColor(c);
-					g.fillRect(100*i, 100*j, 100, 100);
-					color = true;
-				}
-			}
-		}
+		// 		}else{
+		// 			g.setColor(c);
+		// 			g.fillRect(100*i, 100*j, 100, 100);
+		// 			color = true;
+		// 		}
+		// 	}
+		// }
 	}
 
 }
